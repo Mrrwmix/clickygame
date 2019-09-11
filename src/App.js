@@ -4,16 +4,19 @@ import Header from './components/Header';
 import Instructions from './components/Instructions';
 import ImageContainer from './components/ImageContainer';
 import Footer from './components/Footer';
+import GameState from './context/GameState';
 import './App.css';
 
 function App() {
   return (
-    <Wrapper>
-      <Header />
-      <Instructions />
-      <ImageContainer />
-      <Footer />
-    </Wrapper>
+    <GameState>
+      <Wrapper>
+        <Header />
+        <Instructions />
+        <ImageContainer />
+        <Footer />
+      </Wrapper>
+    </GameState>
   );
 }
 

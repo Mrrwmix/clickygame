@@ -1,25 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import GameContext from '../context/gameContext';
 import Image from './Image';
 
 const ImageContainer = () => {
+  const gameContext = useContext(GameContext);
+  const { images } = gameContext;
   return (
-    <div className='row mx-4'>
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
+    <div className='flex-row mx-4 d-flex justify-content-between flex-wrap'>
+      {images.map(item => (
+        <Image image={item} key={item.id} />
+      ))}
     </div>
   );
 };

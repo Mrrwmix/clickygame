@@ -1,0 +1,4 @@
+export const CLICKED_IMAGE = 'CLICKED_IMAGE';
+export const INCREMENT_SCORE = 'INCREMENT_SCORE';
+export const SET_HIGH_SCORE = 'SET_HIGH_SCORE';
+export const SHUFFLE = 'SHUFFLE';
