@@ -104,24 +104,32 @@ const GameState = props => {
       }
     ],
     score: 0,
-    highScore: 0
+    highScore: 0,
+    guess: null
   };
 
   const [state, dispatch] = useReducer(gameReducer, initialState);
 
   //actions for the reducer
   const clickedCard = e => {
-    for (let i = 0; i < this.state.images.length; i++) {
+    for (let i = 0; i < state.images.length; i++) {
       if (
-        this.state.images[i].id === e.target.identity &&
-        this.state.images[i].clicked === false
+        state.images[i].id === Number(e.target.getAttribute("identity")) &&
+        state.images[i].clicked === false
       ) {
-        return dispatch({ type: INCREMENT_SCORE, payload: e.target.identity });
+        console.log("I was clicked!");
+        return dispatch({
+          type: INCREMENT_SCORE,
+          payload: Number(e.target.getAttribute("identity"))
+        });
       } else if (
-        this.state.images[i].id === e.target.identity &&
-        this.state.images[i].clicked === true
+        state.images[i].id === e.target.getAttribute("identity") &&
+        state.images[i].clicked === true
       ) {
-        return dispatch({ type: SET_HIGH_SCORE, payload: e.target.identity });
+        return dispatch({
+          type: SET_HIGH_SCORE,
+          payload: e.target.getAttribute("identity")
+        });
       }
     }
   };
@@ -132,6 +140,7 @@ const GameState = props => {
         score: state.score,
         highScore: state.highScore,
         images: state.images,
+        guess: state.guess,
         clickedCard
       }}
     >

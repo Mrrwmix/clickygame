@@ -5,10 +5,12 @@ export default (state, action) => {
     case INCREMENT_SCORE:
       return {
         ...state,
+        score: state.score + 1,
         images: state.images.map(img =>
-          img.id === action.payload ? (img.clicked = true) : img
-        ),
-        score: state.score++
+          img.id === action.payload
+            ? { id: img.id, src: img.src, name: img.name, clicked: true }
+            : img
+        )
       };
     default:
       return state;

@@ -19,11 +19,11 @@ const Image = ({ image }) => {
     <div className='col-sm-3 text-center my-1 cardo'>
       <img
         src={src}
-        clicked={clicked}
         identity={id}
         alt={name}
         className='img-fluid'
         style={imgStyle}
+        onClick={clickedCard}
       />
     </div>
   );
