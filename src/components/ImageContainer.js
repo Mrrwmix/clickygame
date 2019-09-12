@@ -8,7 +8,7 @@ const ImageContainer = () => {
   return (
     <div className='flex-row mx-4 d-flex justify-content-between flex-wrap'>
       {images
-        .sort((a, b) => (a.random >= b.random ? 1 : -1))
+        .sort((a, b) => (Math.random() >= 0.5 ? 1 : -1))
         .map(item => (
           <Image image={item} key={item.id} />
         ))}

@@ -1,127 +1,106 @@
-import React, { useReducer } from 'react';
-import gameContext from './gameContext';
-import gameReducer from './gameReducer';
-import {
-  INCREMENT_SCORE,
-  SHUFFLE,
-  SET_HIGH_SCORE,
-  CLICKED_IMAGE
-} from './types';
+import React, { useReducer } from "react";
+import gameContext from "./gameContext";
+import gameReducer from "./gameReducer";
+import { INCREMENT_SCORE, SET_HIGH_SCORE } from "./types";
 
 const GameState = props => {
   const initialState = {
     images: [
       {
         id: 1,
-        src: './images/maylee.png',
+        src: "./images/maylee.png",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'May Lee'
+        name: "May Lee"
       },
       {
         id: 2,
-        src: './images/kula.png',
+        src: "./images/kula.png",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Kula Diamond'
+        name: "Kula Diamond"
       },
       {
         id: 3,
-        src: './images/aganos.png',
+        src: "./images/aganos.png",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Aganos'
+        name: "Aganos"
       },
       {
         id: 4,
-        src: './images/thunder.png',
+        src: "./images/thunder.png",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Thunder'
+        name: "Thunder"
       },
       {
         id: 5,
-        src: './images/rogerjr.jpeg',
+        src: "./images/rogerjr.jpeg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Roger Jr.'
+        name: "Roger Jr."
       },
       {
         id: 6,
-        src: './images/dk.png',
+        src: "./images/dk.png",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Donkey Kong'
+        name: "Donkey Kong"
       },
       {
         id: 7,
-        src: './images/piranhaplant.jpg',
+        src: "./images/piranhaplant.jpg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Piranha Plant'
+        name: "Piranha Plant"
       },
       {
         id: 8,
-        src: './images/kingdedede.png',
+        src: "./images/kingdedede.png",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'King Dedede'
+        name: "King Dedede"
       },
       {
         id: 9,
-        src: './images/mario.jpeg',
+        src: "./images/mario.jpeg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Mario'
+        name: "Mario"
       },
       {
         id: 10,
-        src: './images/kairi.jpg',
+        src: "./images/kairi.jpg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Kairi'
+        name: "Kairi"
       },
       {
         id: 11,
-        src: './images/bang.jpg',
+        src: "./images/bang.jpg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Bang'
+        name: "Bang"
       },
       {
         id: 12,
-        src: './images/nightmare.jpg',
+        src: "./images/nightmare.jpg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Nightmare'
+        name: "Nightmare"
       },
       {
         id: 13,
-        src: './images/lei.jpg',
+        src: "./images/lei.jpg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Lei Fei'
+        name: "Lei Fei"
       },
       {
         id: 14,
-        src: './images/blackheart.gif',
+        src: "./images/blackheart.gif",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Blackheart'
+        name: "Blackheart"
       },
       {
         id: 15,
-        src: './images/zero.jpg',
+        src: "./images/zero.jpg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Zero'
+        name: "Zero"
       },
       {
         id: 16,
-        src: './images/venom.jpg',
+        src: "./images/venom.jpg",
         clicked: false,
-        random: Math.random() * 1000,
-        name: 'Venom'
+        name: "Venom"
       }
     ],
     score: 0,
@@ -131,13 +110,29 @@ const GameState = props => {
   const [state, dispatch] = useReducer(gameReducer, initialState);
 
   //actions for the reducer
+  const clickedCard = e => {
+    for (let i = 0; i < this.state.images.length; i++) {
+      if (
+        this.state.images[i].id === e.target.identity &&
+        this.state.images[i].clicked === false
+      ) {
+        return dispatch({ type: INCREMENT_SCORE, payload: e.target.identity });
+      } else if (
+        this.state.images[i].id === e.target.identity &&
+        this.state.images[i].clicked === true
+      ) {
+        return dispatch({ type: SET_HIGH_SCORE, payload: e.target.identity });
+      }
+    }
+  };
 
   return (
     <gameContext.Provider
       value={{
         score: state.score,
         highScore: state.highScore,
-        images: state.images
+        images: state.images,
+        clickedCard
       }}
     >
       {props.children}
