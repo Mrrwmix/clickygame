@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import GameContext from '../context/gameContext';
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import GameContext from "../context/gameContext";
 
 const Image = ({ image }) => {
   const gameContext = useContext(GameContext);

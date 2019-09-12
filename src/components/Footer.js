@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <div className='row fixed-bottom bg-primary text-white'>
+    <div className='row static-bottom bg-primary text-white'>
       <div className='col-md-6'>
         <h2 className='text-left'>Clicky Game!</h2>
       </div>
