@@ -32,39 +32,39 @@ const GameState = props => {
       },
       {
         id: 5,
-        src: "./images/rogerjr.jpeg",
+        src: "./images/benimaru.png",
         clicked: false,
-        name: "Roger Jr."
+        name: "Benimaru"
       },
       {
         id: 6,
-        src: "./images/dk.png",
+        src: "./images/robert.png",
         clicked: false,
-        name: "Donkey Kong"
+        name: "Robert"
       },
       {
         id: 7,
-        src: "./images/piranhaplant.jpg",
+        src: "./images/kim.png",
         clicked: false,
-        name: "Piranha Plant"
+        name: "Kim"
       },
       {
         id: 8,
-        src: "./images/kingdedede.png",
+        src: "./images/choi.jpg",
         clicked: false,
-        name: "King Dedede"
+        name: "Choi"
       },
       {
         id: 9,
-        src: "./images/mario.jpeg",
+        src: "./images/ryo.jpg",
         clicked: false,
-        name: "Mario"
+        name: "Ryo"
       },
       {
         id: 10,
-        src: "./images/kairi.jpg",
+        src: "./images/daimon.jpg",
         clicked: false,
-        name: "Kairi"
+        name: "Daimon"
       },
       {
         id: 11,
@@ -74,33 +74,33 @@ const GameState = props => {
       },
       {
         id: 12,
-        src: "./images/nightmare.jpg",
+        src: "./images/geese.jpg",
         clicked: false,
-        name: "Nightmare"
+        name: "Geese"
       },
       {
         id: 13,
-        src: "./images/lei.jpg",
+        src: "./images/yuri.png",
         clicked: false,
-        name: "Lei Fei"
+        name: "Yuri"
       },
       {
         id: 14,
-        src: "./images/blackheart.gif",
+        src: "./images/iori.png",
         clicked: false,
-        name: "Blackheart"
+        name: "Iori"
       },
       {
         id: 15,
-        src: "./images/zero.jpg",
+        src: "./images/maxima.png",
         clicked: false,
-        name: "Zero"
+        name: "Maxima"
       },
       {
         id: 16,
-        src: "./images/venom.png",
+        src: "./images/takuma.jpg",
         clicked: false,
-        name: "Venom"
+        name: "Takuma"
       }
     ],
     score: 0,
