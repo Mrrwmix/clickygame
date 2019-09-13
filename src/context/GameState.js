@@ -20,15 +20,15 @@ const GameState = props => {
       },
       {
         id: 3,
-        src: "./images/aganos.png",
+        src: "./images/K.png",
         clicked: false,
-        name: "Aganos"
+        name: "K"
       },
       {
         id: 4,
-        src: "./images/thunder.png",
+        src: "./images/terry.jpg",
         clicked: false,
-        name: "Thunder"
+        name: "Terry"
       },
       {
         id: 5,
@@ -68,9 +68,9 @@ const GameState = props => {
       },
       {
         id: 11,
-        src: "./images/bang.jpg",
+        src: "./images/chang.png",
         clicked: false,
-        name: "Bang"
+        name: "Chang"
       },
       {
         id: 12,
@@ -98,7 +98,7 @@ const GameState = props => {
       },
       {
         id: 16,
-        src: "./images/venom.jpg",
+        src: "./images/venom.png",
         clicked: false,
         name: "Venom"
       }
@@ -117,18 +117,17 @@ const GameState = props => {
         state.images[i].id === Number(e.target.getAttribute("identity")) &&
         state.images[i].clicked === false
       ) {
-        console.log("I was clicked!");
         return dispatch({
           type: INCREMENT_SCORE,
           payload: Number(e.target.getAttribute("identity"))
         });
       } else if (
-        state.images[i].id === e.target.getAttribute("identity") &&
+        state.images[i].id === Number(e.target.getAttribute("identity")) &&
         state.images[i].clicked === true
       ) {
         return dispatch({
           type: SET_HIGH_SCORE,
-          payload: e.target.getAttribute("identity")
+          payload: state.score
         });
       }
     }
