@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import GameContext from "../context/gameContext";
 import "../App.css";
+import { useSpring, animated } from "react-spring";
 
 const imgStyle = {
   width: "10vw",
@@ -13,10 +14,15 @@ const imgStyle = {
 
 const Image = ({ image }) => {
   const gameContext = useContext(GameContext);
+  const spring = useSpring({ opacity: 1, from: { opacity: 0 } });
   const { clickedCard } = gameContext;
   const { src, id, name } = image;
+
   return (
-    <div className='col-sm-3 text-center my-1 cardo d-flex justify-content-center'>
+    <animated.div
+      className='col-sm-3 text-center my-1 cardo d-flex justify-content-center'
+      style={spring}
+    >
       <img
         src={src}
         alt={name}
@@ -25,7 +31,7 @@ const Image = ({ image }) => {
         onClick={clickedCard}
         identity={id}
       />
-    </div>
+    </animated.div>
   );
 };
 

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import GameContext from "../context/gameContext";
 import Image from "./Image";
+import { animated } from "react-spring";
 
 const ImageContainer = () => {
+  const AnimatedImage = animated(Image);
   const gameContext = useContext(GameContext);
   const { images } = gameContext;
   return (
@@ -10,7 +12,7 @@ const ImageContainer = () => {
       {images
         .sort((a, b) => (Math.random() >= 0.5 ? 1 : -1))
         .map(item => (
-          <Image image={item} key={item.id} />
+          <AnimatedImage image={item} key={item.id} />
         ))}
     </div>
   );
